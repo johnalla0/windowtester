@@ -6,13 +6,14 @@
  *  http://www.eclipse.org/legal/epl-v10.html
  *  
  *  Contributors:
- *  Phillip Jensen - initial API and implementation
+ *  Phillip Jensen - initial API and implementation, adaptation to HasSelection locator
  *  Frederic Gurr - adaptation to HasMaximum and HasMinimum locators 
  *******************************************************************************/
 package com.windowtester.runtime.swt.locator;
 
 import org.eclipse.swt.widgets.Slider;
 
+import com.windowtester.internal.runtime.condition.HasSelection;
 import com.windowtester.runtime.IUIContext;
 import com.windowtester.runtime.WidgetSearchException;
 import com.windowtester.runtime.condition.HasFocus;
@@ -26,7 +27,7 @@ import com.windowtester.runtime.condition.IsEnabledCondition;
 import com.windowtester.runtime.swt.condition.HasSelectionCondition;
 import com.windowtester.runtime.swt.internal.widgets.SliderReference;
 
-public class SliderLocator extends SWTWidgetLocator implements IsEnabled, HasFocus, HasMinimum, HasMaximum {
+public class SliderLocator extends SWTWidgetLocator implements IsEnabled, HasFocus, HasMinimum, HasMaximum, HasSelection {
 
 	private static final long serialVersionUID = -6355700821071219211L;
 

@@ -1,5 +1,5 @@
 /*******************************************************************************
- *  Copyright (c) 2012 Google, Inc., Phillip Jensen
+ *  Copyright (c) 2015 Google, Inc., Phillip Jensen
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -7,7 +7,7 @@
  *  
  *  Contributors:
  *  Google, Inc. - initial API and implementation
- *  Phillip Jensen - added visitSlider method
+ *  Phillip Jensen - added visitSlider, visitProgressBar methods
  *******************************************************************************/
 package com.windowtester.runtime.swt.internal.widgets;
 
@@ -27,6 +27,7 @@ import org.eclipse.swt.widgets.Item;
 import org.eclipse.swt.widgets.List;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.MenuItem;
+import org.eclipse.swt.widgets.ProgressBar;
 import org.eclipse.swt.widgets.ScrollBar;
 import org.eclipse.swt.widgets.Scrollable;
 import org.eclipse.swt.widgets.Shell;
@@ -231,6 +232,12 @@ public class WTRuntimeFactorySWT implements WTRuntimeFactory
 			reference = new SliderReference(widget);
 		}
 
+		@Override
+		public void visitProgressBar(ProgressBar widget) {
+			reference = new ProgressBarReference(widget);
+		}
+		
+		
 		@Override
 		public void visitStyledText(StyledText widget) {
 			reference = new StyledTextReference(widget);

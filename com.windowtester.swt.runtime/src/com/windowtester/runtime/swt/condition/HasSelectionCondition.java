@@ -12,10 +12,10 @@ package com.windowtester.runtime.swt.condition;
 
 import com.windowtester.internal.runtime.IDiagnostic;
 import com.windowtester.internal.runtime.IDiagnosticParticipant;
+import com.windowtester.internal.runtime.condition.HasSelection;
 import com.windowtester.runtime.IUIContext;
 import com.windowtester.runtime.WidgetSearchException;
 import com.windowtester.runtime.condition.IUICondition;
-import com.windowtester.runtime.swt.locator.SliderLocator;
 
 /**
  * Tests whether a locator identifies a widget that has the
@@ -30,20 +30,21 @@ import com.windowtester.runtime.swt.locator.SliderLocator;
  */
 public class HasSelectionCondition implements IUICondition, IDiagnosticParticipant {
 
-	private final SliderLocator locator;
+	private final HasSelection locator;
 	private final int expected;
 	private int actual;
 	private WidgetSearchException exception;
 
 	/**
 	 * Construct a new instance
-	 * @param locator the locator for the widget to be tested
+	 * @param hasSelection the locator for the widget to be tested
 	 * @param expected the expected selection value
 	 */
-	public HasSelectionCondition(SliderLocator locator, int expected) {
-		this.locator = locator;
+	public HasSelectionCondition(HasSelection hasSelection, int expected) {
+		this.locator = hasSelection;
 		this.expected = expected;
 	}
+
 
 	/* (non-Javadoc)
 	 * @see com.windowtester.runtime.condition.ICondition#test()
